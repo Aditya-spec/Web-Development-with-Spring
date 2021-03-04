@@ -5,13 +5,28 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BinarySearch {
+@Autowired
+private SortingAlgorithm sortingAlgorithm;
+@Autowired
+private String name;
 
-    private SortingAlgorithm sortingAlgorithm;
-
-    @Autowired
-    public BinarySearch(SortingAlgorithm sortingAlgorithm) {
+    public BinarySearch(SortingAlgorithm sortingAlgorithm, String name) {
         this.sortingAlgorithm = sortingAlgorithm;
+        this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "BinarySearch{" +
+                "sortingAlgorithm=" + sortingAlgorithm +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+//    @Autowired
+//    public BinarySearch(SortingAlgorithm sortingAlgorithm) {
+//        this.sortingAlgorithm = sortingAlgorithm;
+//    }
 
     public int searchNumber(int[] numbers, int number) {
 
