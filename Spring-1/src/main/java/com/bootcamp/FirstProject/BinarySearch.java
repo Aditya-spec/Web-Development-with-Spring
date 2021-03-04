@@ -5,9 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BinarySearch {
-    @Autowired
+
     private SortingAlgorithm sortingAlgorithm;
 
+    @Autowired
     public BinarySearch(SortingAlgorithm sortingAlgorithm) {
         this.sortingAlgorithm = sortingAlgorithm;
     }
