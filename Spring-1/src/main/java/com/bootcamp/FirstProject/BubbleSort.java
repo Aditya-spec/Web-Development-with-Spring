@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BubbleSort implements SortingAlgorithm {
-    public int[] sort(int[] numbers){
+    public int[] sort(int[] numbers) {
         System.out.println("Bubble Sort called");
         int n = numbers.length;
         for (int i = 0; i < n - 1; i++)
