@@ -17,13 +17,8 @@ public class BinarySearch {
         System.out.println();
     }
 
-    @Override
-    public String toString() {
-        return "BinarySearch{" +
-                "sortingAlgorithm=" + sortingAlgorithm +
-                ", name='" + name + '\'' +
-                '}';
-    }
+    
+    
 
     public int searchNumber(int[] numbers, int number) {
 

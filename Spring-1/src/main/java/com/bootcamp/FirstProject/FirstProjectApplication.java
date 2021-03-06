@@ -13,6 +13,8 @@ public class FirstProjectApplication {
         System.out.println(binarySearch);
         int result = binarySearch.searchNumber(new int[]{12, 3, 5, 4, 8, 23, 45, 11}, 5);
         System.out.println(result);
+
+
     }
 
 }
