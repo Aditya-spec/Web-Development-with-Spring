@@ -11,11 +11,11 @@ public class Employee {
     @Size(min = 2, max = 30)
     private String name;
 
-    @Min(18)
+    @Min(value = 18, message = "Age should be greater than 18")
     private int age;
 
-    protected Employee() {
-    }
+  /*  protected Employee() {
+    }*/
 
     public Employee(int id, String name, int age) {
         this.id = id;

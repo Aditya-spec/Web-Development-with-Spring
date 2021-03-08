@@ -16,13 +16,13 @@ public class EmployeeResources {
 
     @GetMapping("/Employee")
     public List<Employee> showEmployeeDetails() {
-        List<Employee> employees =employeeDao.showDetails();
+        List<Employee> employees = employeeDao.showDetails();
         return employees;
     }
 
     @GetMapping("/Employee/{id}")
     public Employee getOneEmployee(@PathVariable Integer id) {
-        Employee employee =employeeDao.findEmployee(id);
+        Employee employee = employeeDao.findEmployee(id);
         if (employee == null) {
             throw new UserNotfoundException("id:" + id);
         }
@@ -31,7 +31,7 @@ public class EmployeeResources {
 
     @DeleteMapping("/Employee/{id}")
     public Employee deleteEmployee(@PathVariable Integer id) {
-        Employee employee =employeeDao.deleteEmployee(id);
+        Employee employee = employeeDao.deleteEmployee(id);
         if (employee == null) {
             throw new UserNotfoundException("id:" + id);
         }
@@ -40,7 +40,7 @@ public class EmployeeResources {
 
     @PostMapping("/Employee")
     public ResponseEntity<Object> saveEmployee(@Valid @RequestBody Employee employee) {
-        Employee employee1 =employeeDao.saveDetails(employee);
+        Employee employee1 = employeeDao.saveDetails(employee);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest().path("/{id}")
                 .buildAndExpand(employee1.getId())
@@ -50,8 +50,8 @@ public class EmployeeResources {
     }
 
     @PutMapping("/Employee/{id}")
-    public Employee updateEmployee(@PathVariable Integer id, @RequestBody Employee employee) {
-        Employee employee1 =employeeDao.findEmployee(id);
+    public Employee updateEmployee(@Valid @PathVariable Integer id, @RequestBody Employee employee) {
+        Employee employee1 = employeeDao.findEmployee(id);
         if (employee == null) {
             throw new UserNotfoundException("id:" + id);
         }
