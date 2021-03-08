@@ -12,17 +12,17 @@ import java.util.List;
 @RestController
 public class EmployeeResources {
     @Autowired
-    public EmployeeDaoService employeeDaoService;
+    public EmployeeDao employeeDao;
 
     @GetMapping("/Employee")
     public List<Employee> showEmployeeDetails() {
-        List<Employee> employees = employeeDaoService.showDetails();
+        List<Employee> employees =employeeDao.showDetails();
         return employees;
     }
 
     @GetMapping("/Employee/{id}")
     public Employee getOneEmployee(@PathVariable Integer id) {
-        Employee employee = employeeDaoService.findEmployee(id);
+        Employee employee =employeeDao.findEmployee(id);
         if (employee == null) {
             throw new UserNotfoundException("id:" + id);
         }
@@ -31,7 +31,7 @@ public class EmployeeResources {
 
     @DeleteMapping("/Employee/{id}")
     public Employee deleteEmployee(@PathVariable Integer id) {
-        Employee employee = employeeDaoService.deleteEmployee(id);
+        Employee employee =employeeDao.deleteEmployee(id);
         if (employee == null) {
             throw new UserNotfoundException("id:" + id);
         }
@@ -40,7 +40,7 @@ public class EmployeeResources {
 
     @PostMapping("/Employee")
     public ResponseEntity<Object> saveEmployee(@Valid @RequestBody Employee employee) {
-        Employee employee1 = employeeDaoService.saveDetails(employee);
+        Employee employee1 =employeeDao.saveDetails(employee);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest().path("/{id}")
                 .buildAndExpand(employee1.getId())
@@ -51,7 +51,7 @@ public class EmployeeResources {
 
     @PutMapping("/Employee/{id}")
     public Employee updateEmployee(@PathVariable Integer id, @RequestBody Employee employee) {
-        Employee employee1 = employeeDaoService.findEmployee(id);
+        Employee employee1 =employeeDao.findEmployee(id);
         if (employee == null) {
             throw new UserNotfoundException("id:" + id);
         }

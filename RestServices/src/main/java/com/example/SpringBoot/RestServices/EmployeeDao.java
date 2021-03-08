@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @Component
-public class EmployeeDaoService {
+public class EmployeeDao {
     private static List<Employee> employeeList = new ArrayList<Employee>();
     private static int employeeCounter = 3;
 
