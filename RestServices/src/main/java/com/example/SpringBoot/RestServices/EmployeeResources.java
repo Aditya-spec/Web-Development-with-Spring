@@ -50,7 +50,7 @@ public class EmployeeResources {
     }
 
     @PutMapping("/Employee/{id}")
-    public Employee updateEmployee(@Valid @PathVariable Integer id, @RequestBody Employee employee) {
+    public Employee updateEmployee( @PathVariable Integer id, @Valid @RequestBody Employee employee) {
         Employee employee1 = employeeDao.findEmployee(id);
         if (employee == null) {
             throw new UserNotfoundException("id:" + id);
