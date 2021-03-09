@@ -21,6 +21,18 @@ public class EmployeeDao {
         return employeeList;
     }
 
+
+
+    public List<Employee> showEvenDetails() {
+        List<Employee> employeeList1 = new ArrayList<Employee>();
+        for (Employee employee : employeeList) {
+            if (employee.getId() % 2 == 0)
+                employeeList1.add(employee);
+        }
+        return employeeList1;
+    }
+
+
     public Employee saveDetails(Employee employee) {
         if (employee.getId() == null) {
             employee.setId(++employeeCounter);

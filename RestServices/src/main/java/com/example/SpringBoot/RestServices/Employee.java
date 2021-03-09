@@ -6,7 +6,9 @@ import javax.validation.constraints.Size;
 
 public class Employee {
 
+
     private Integer id;
+
 
     @Size(min = 2, max = 30)
     private String name;
@@ -14,10 +16,11 @@ public class Employee {
     @Min(value = 18, message = "Age should be greater than 18")
     private int age;
 
-  /*  protected Employee() {
-    }*/
+    protected Employee() {
+    }
 
     public Employee(int id, String name, int age) {
+        super();
         this.id = id;
         this.name = name;
         this.age = age;
