@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
@@ -182,7 +181,7 @@ public class EmployeeController {
             response = Employee.class)
     public Employee updateEmployee(@PathVariable Integer id, @Valid @RequestBody Employee employee) {
         Employee employee1 = employeeDao.findEmployee(id);
-        if (employee == null) {
+        if (employee1.equals(null)) {
             throw new UserNotfoundException("id:" + id);
         }
         employee1.setAge(employee.getAge());

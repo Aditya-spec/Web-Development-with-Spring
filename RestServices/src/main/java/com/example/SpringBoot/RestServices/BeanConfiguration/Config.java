@@ -1,4 +1,4 @@
-package com.example.SpringBoot.RestServices;
+package com.example.SpringBoot.RestServices.BeanConfiguration;
 
 import io.swagger.annotations.ApiModel;
 import org.springframework.context.annotation.Bean;
