@@ -9,7 +9,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @ApiModel(description = "All details about the employee")
-@JsonFilter("EmployeeFilter")
+//@JsonFilter("EmployeeFilter")
 public class Employee {
 
     // @JsonIgnore

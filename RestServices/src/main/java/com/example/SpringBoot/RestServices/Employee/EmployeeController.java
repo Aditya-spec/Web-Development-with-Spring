@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
@@ -40,7 +41,7 @@ public class EmployeeController {
             response = EntityModel.class)
     public EntityModel<Employee> getOneEmployee(@PathVariable Integer id) {
         Employee employee = employeeDao.findEmployee(id);
-        if (employee == null) {
+        if (employee.equals(null)) {
             throw new UserNotfoundException("id:" + id);
         }
         EntityModel<Employee> employeeEntityModel = new EntityModel<Employee>(employee);
@@ -49,8 +50,8 @@ public class EmployeeController {
         return employeeEntityModel;
     }
 
-//Please uncomment this block to check dynamic filtering
-    /*@PostMapping("/employee/filter/dynamic")
+
+    @PostMapping("/employee/filter/dynamic")
     public MappingJacksonValue dynamicFilter(@Valid @RequestBody Employee newEmployee) {
 
         Employee savedEmployee = employeeDao.saveDetails(newEmployee);
@@ -62,7 +63,7 @@ public class EmployeeController {
         MappingJacksonValue mapping = new MappingJacksonValue(savedEmployee);
         mapping.setFilters(filters);
         return mapping;
-    }*/
+    }
 
 
     @GetMapping("/employee/greetings/{name}")
