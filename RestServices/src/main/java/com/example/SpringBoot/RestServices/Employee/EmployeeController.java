@@ -27,6 +27,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RestController
 @Api(description = "It will handle all the requests and gives the appropriate response")
 public class EmployeeController {
+
     @Autowired
     private EmployeeService employeeDao;
 
@@ -48,8 +49,8 @@ public class EmployeeController {
         return employeeEntityModel;
     }
 
-
-    @PostMapping("/employee/filter/dynamic")
+//Please uncomment this block to check dynamic filtering
+    /*@PostMapping("/employee/filter/dynamic")
     public MappingJacksonValue dynamicFilter(@Valid @RequestBody Employee newEmployee) {
 
         Employee savedEmployee = employeeDao.saveDetails(newEmployee);
@@ -61,7 +62,7 @@ public class EmployeeController {
         MappingJacksonValue mapping = new MappingJacksonValue(savedEmployee);
         mapping.setFilters(filters);
         return mapping;
-    }
+    }*/
 
 
     @GetMapping("/employee/greetings/{name}")
@@ -167,7 +168,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee/filter/static")
-    @ApiOperation(value = "Shows static filtering ",
+    @ApiOperation(value = "Shows static filtering",
             response = Employee.class)
     public Employee saveEmployeeFilterStatic(@Valid @RequestBody Employee employee) {
         Employee employee1 = employeeDao.saveDetails(employee);
