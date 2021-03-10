@@ -1,5 +1,6 @@
 package com.example.SpringBoot.RestServices;
 
+import io.swagger.annotations.ApiModel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.hateoas.client.LinkDiscoverer;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Configuration
+@ApiModel(description = "Beans are defined here")
 public class Config {
     @Bean
     public LocaleResolver localeResolver () {
