@@ -4,6 +4,7 @@ import com.example.Spring_Data_Jpa_Using_Hibernate.EmployeeDataJPA.Entities.Empl
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Integer> {
     List<Employee> findByName(String name);
@@ -11,4 +12,6 @@ public interface EmployeeRepository extends PagingAndSortingRepository<Employee,
     List<Employee> findByAgeBetween(int startingAge, int endingAge);
 
     List<Employee> findByNameLike(String firstWord);
+
+
 }

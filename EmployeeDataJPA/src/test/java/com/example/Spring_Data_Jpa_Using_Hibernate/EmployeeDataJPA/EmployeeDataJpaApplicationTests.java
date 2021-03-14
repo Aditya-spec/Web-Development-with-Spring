@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -36,14 +37,14 @@ class EmployeeDataJpaApplicationTests {
 
     @Test
     public void testRead() {
-        Employee employee = employeeRepository.findById(1).get();
+        Employee employee = employeeRepository.findById(2).get();
         assertNotNull(employee);
-        assertEquals("Alpha", employee.getName());
+        assertEquals("Bravo", employee.getName());
     }
 
     @Test
     public void testUpdate() {
-        Employee employee = employeeRepository.findById(1).get();
+        Employee employee = employeeRepository.findById(2).get();
         employee.setAge(44);
         employeeRepository.save(employee);
     }
