@@ -17,10 +17,10 @@ public class Jpa3Application {
         BidirectionalService bidirectionalService = applicationContext.getBean(BidirectionalService.class);
         UnidirectionalService unidirectionalService=applicationContext.getBean(UnidirectionalService.class);
         ManyToManyService manyToManyService=applicationContext.getBean(ManyToManyService.class);
-        authorService.createAuthorInstance();
+        //authorService.createAuthorInstance();
        // bidirectionalService.createBidirectionalInstance();
         //unidirectionalService.setData();
-        //manyToManyService.createManyToMany();
+        manyToManyService.createManyToMany();
     }
 
 }
