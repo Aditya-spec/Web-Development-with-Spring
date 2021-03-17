@@ -16,8 +16,9 @@ public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
     List<Object> findFirstNameLastNameSalaryGreaterThanAverage(Sort sort);
 
     @Modifying
-    @Query("update Employee e set e.salary=:salary where e.salary < (select avg(salary) from Employee)")
+    @Query(value = "update employee_table as e INNER JOIN (select avg(emp_salary) as avg_salary from employee_table) as e1 on e.emp_salary<e1.avg_salary set e.emp_salary=:salary",nativeQuery = true)
     void updateSalary(@Param("salary") int updatedSalary);
+
 
     @Modifying
     @Query("delete Employee e where e.salary<:salary")
@@ -35,6 +36,6 @@ public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 
     @Modifying
     @Query("update Employee  set salary=:updatedSalary where salary<:avgSalary")
-    void updateEmployeeHavingLessThanAveragesalary(@Param("updatedSalary") int updatedSalary,
+    void updateEmployeeHavingLessThanAverageSalary(@Param("updatedSalary") int updatedSalary,
                                                    @Param("avgSalary") int averageSalary);
 }

@@ -1,6 +1,6 @@
 package com.example.SpringDataPart2.JPQl.entities.JpqlAndNativeQuery;
 
-import com.example.SpringDataPart2.JPQl.EmbeddedClasses.Salary;
+
 
 import javax.persistence.*;
 

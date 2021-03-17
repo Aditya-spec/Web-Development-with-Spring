@@ -21,10 +21,11 @@ public class JpQlApplication {
         EmployeeForTableStrategyService employeeForTableStrategyService=applicationContext.getBean(EmployeeForTableStrategyService.class);
         EmployeeForJoinedInheritanceService employeeForJoinedInheritanceService=applicationContext.getBean(EmployeeForJoinedInheritanceService.class);
 
-        /*employeeService.findFirstAndLastName();
+       // employeeService.set0();
+       // employeeService.findFirstAndLastName();
         employeeService.setNewSalary(22000);
-        employeeService.deleteEmployee(10000);
-        employeeService.showSinghNamedEmployee();
+        /*employeeService.deleteEmployee(10000);
+        employeeService.showSinghNamedEmployee();select avg(emp_salary) as avg_salary from employee_table
         employeeService.deleteAgedEmployee(45);
 
         employeeSalariedService.createEmployeeSalaried();
@@ -32,7 +33,7 @@ public class JpQlApplication {
         employeeSingleTableInheritanceService.createEmployee();
         employeeForTableStrategyService.createEmployeeforTableStrategy();
         employeeForJoinedInheritanceService.createEmployeeUsingJoined();*/
-        employeeService.updateLowerSalariedEmployee(30000);
+      //  employeeService.updateLowerSalariedEmployee(30000);
     }
 
 }

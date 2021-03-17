@@ -22,14 +22,18 @@ public class EmployeeService {
         list.stream().forEach(emp -> System.out.println(emp));
     }
 
+   /* @Transactional
+    public void set0(){
+        employeeRepository.updateSalaryto0();
+    }*/
     @Transactional
-    public void setNewSalary(int updatedsalary) {
-        employeeRepository.updateSalary(updatedsalary);
+    public void setNewSalary(int updatedSalary) {
+        employeeRepository.updateSalary(updatedSalary);
     }
 
     @Transactional
-    public void deleteEmployee(int minsalary) {
-        int i = employeeRepository.deleteEmployeeWithMinimumSalary(minsalary);
+    public void deleteEmployee(int minSalary) {
+        int i = employeeRepository.deleteEmployeeWithMinimumSalary(minSalary);
         System.out.println("Numbers of employee deleted:" + i);
     }
 
@@ -51,12 +55,14 @@ public class EmployeeService {
         int averageSalary = employeeRepository.findAverageSalary();
         System.out.println(averageSalary);
 
-        employeeRepository.updateEmployeeHavingLessThanAveragesalary(newSalary, averageSalary);
+        employeeRepository.updateEmployeeHavingLessThanAverageSalary(newSalary, averageSalary);
         //employeeList.stream().forEach(e-> System.out.println(e));
 
     }
 
-
+/*
+    public void setNewSalary(int i) {
+    }*/
 }
 
 
