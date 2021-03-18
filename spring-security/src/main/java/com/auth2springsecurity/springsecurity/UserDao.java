@@ -16,10 +16,10 @@ public class UserDao {
         User user = userRepository.findByUsername(username);
         System.out.println(user);
         if (username != null) {
-            List<Hasroles> roles = user.getRoles();
+            List<Roles> roles = user.getRolesList();
             List<GrantAuthorityImpl> grantAuthorities = new ArrayList<>();
 
-            for (Hasroles userRole : roles) {
+            for (Roles userRole : roles) {
                 grantAuthorities.add(new GrantAuthorityImpl(userRole.getRole()));
             }
             return new AppUser(user.getUsername(), user.getPassword(), grantAuthorities);

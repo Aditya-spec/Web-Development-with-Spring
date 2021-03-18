@@ -19,15 +19,15 @@ public class User {
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "hasroles_id", referencedColumnName = "id"))
-    private List<Hasroles> roles;
+    private List<Roles> rolesList;
 
-    public List<Hasroles> getRoles() {
+    public List<Roles> getRolesList() {
 
-        return roles;
+        return rolesList;
     }
 
-    public void setRoles(List<Hasroles> roles) {
-        this.roles = roles;
+    public void setRolesList(List<Roles> rolesList) {
+        this.rolesList = rolesList;
     }
 
     public Integer getId() {
@@ -54,12 +54,12 @@ public class User {
         this.password = password;
     }
 
-    public void setRole(Hasroles role) {
+    public void setRole(Roles role) {
         if (role != null) {
-            if (roles == null) {
-                roles = new ArrayList<>();
+            if (rolesList == null) {
+                rolesList = new ArrayList<>();
             }
-            roles.add(role);
+            rolesList.add(role);
         }
     }
 
@@ -69,7 +69,7 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", roles=" + roles +
+                ", roles=" + rolesList +
                 '}';
     }
 }

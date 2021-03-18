@@ -20,9 +20,9 @@ public class Bootstrap implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         if (userRepository.count() < 1) {
             PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            Hasroles roleAdmin = new Hasroles();
-            Hasroles roleUser = new Hasroles();
-            Hasroles rolePremium = new Hasroles();
+            Roles roleAdmin = new Roles();
+            Roles roleUser = new Roles();
+            Roles rolePremium = new Roles();
 
             roleUser.setRole("ROLE_USER");
             roleAdmin.setRole("ROLE_ADMIN");
