@@ -52,7 +52,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .authorizeRequests()
                 .antMatchers("/").anonymous()
                 .antMatchers("/admin/home").hasAnyRole("ADMIN")
-                .antMatchers("/user/home").hasAnyRole("USER","ADMIN")
+                .antMatchers("/user/home").hasAnyRole("USER")
                 .antMatchers("/doLogout").hasAnyRole("ADMIN","USER","PREMIUM")
                 .antMatchers("/user/premium").hasAnyRole("PREMIUM")
                 .anyRequest().authenticated()

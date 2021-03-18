@@ -46,7 +46,7 @@ public class Bootstrap implements ApplicationRunner {
             admin.setPassword(passwordEncoder.encode("pass"));
             premium.setPassword(passwordEncoder.encode("pass"));
 
-           
+
 
 
             userRepository.save(user);
