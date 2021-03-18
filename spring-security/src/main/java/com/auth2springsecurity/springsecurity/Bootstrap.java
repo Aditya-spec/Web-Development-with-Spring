@@ -20,6 +20,7 @@ public class Bootstrap implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         if (userRepository.count() < 1) {
             PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
             Roles roleAdmin = new Roles();
             Roles roleUser = new Roles();
             Roles rolePremium = new Roles();
@@ -28,14 +29,14 @@ public class Bootstrap implements ApplicationRunner {
             roleAdmin.setRole("ROLE_ADMIN");
             rolePremium.setRole("ROLE_PREMIUM");
 
-            User user = new User();
-            user.setUsername("user");
-            user.setRole(roleUser);
-
             User admin = new User();
             admin.setUsername("admin");
             admin.setRole(roleAdmin);
             admin.setRole(roleUser);
+
+            User user = new User();
+            user.setUsername("user");
+            user.setRole(roleUser);
 
             User premium = new User();
             premium.setUsername("premium");
@@ -45,13 +46,7 @@ public class Bootstrap implements ApplicationRunner {
             admin.setPassword(passwordEncoder.encode("pass"));
             premium.setPassword(passwordEncoder.encode("pass"));
 
-
-            admin.setRole(roleAdmin);
-            admin.setRole(roleUser);
-
-
             premium.setPassword(passwordEncoder.encode("pass"));
-            premium.setRole(rolePremium);
 
 
             userRepository.save(user);
