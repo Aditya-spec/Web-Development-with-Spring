@@ -1,8 +1,8 @@
-package com.example.Jpa.Hibernate.Part3.JPA3.Services;
+package com.example.Jpa.Hibernate.Part3.JPA3.services;
 
-import com.example.Jpa.Hibernate.Part3.JPA3.Entities.AuthorUnidirection;
-import com.example.Jpa.Hibernate.Part3.JPA3.Entities.BookUnidirection;
-import com.example.Jpa.Hibernate.Part3.JPA3.Repositories.UnidirectionalRepository;
+import com.example.Jpa.Hibernate.Part3.JPA3.entities.AuthorUnidirection;
+import com.example.Jpa.Hibernate.Part3.JPA3.entities.BookUnidirection;
+import com.example.Jpa.Hibernate.Part3.JPA3.repositories.UnidirectionalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

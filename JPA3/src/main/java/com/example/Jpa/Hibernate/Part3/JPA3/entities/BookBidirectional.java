@@ -1,25 +1,16 @@
-package com.example.Jpa.Hibernate.Part3.JPA3.Entities;
+package com.example.Jpa.Hibernate.Part3.JPA3.entities;
 
 import javax.persistence.*;
 
 @Entity
-public class Book {
+public class BookBidirectional {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookId;
     private String bookName;
-
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "author_id")
-    private Author author;
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
+    private AuthorBidirectional author;
 
     public int getBookId() {
         return bookId;
@@ -35,5 +26,13 @@ public class Book {
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+
+    public AuthorBidirectional getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(AuthorBidirectional author) {
+        this.author = author;
     }
 }

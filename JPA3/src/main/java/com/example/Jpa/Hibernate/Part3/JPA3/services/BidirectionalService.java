@@ -1,8 +1,8 @@
-package com.example.Jpa.Hibernate.Part3.JPA3.Services;
+package com.example.Jpa.Hibernate.Part3.JPA3.services;
 
-import com.example.Jpa.Hibernate.Part3.JPA3.Entities.AuthorBidirectional;
-import com.example.Jpa.Hibernate.Part3.JPA3.Entities.BookBidirectional;
-import com.example.Jpa.Hibernate.Part3.JPA3.Repositories.BidirectionalRepository;
+import com.example.Jpa.Hibernate.Part3.JPA3.entities.AuthorBidirectional;
+import com.example.Jpa.Hibernate.Part3.JPA3.entities.BookBidirectional;
+import com.example.Jpa.Hibernate.Part3.JPA3.repositories.BidirectionalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,10 @@
-package com.example.Jpa.Hibernate.Part3.JPA3.Entities;
+package com.example.Jpa.Hibernate.Part3.JPA3.entities;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "book_m")
 public class BookManyToMany {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)

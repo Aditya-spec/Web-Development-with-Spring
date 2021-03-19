@@ -1,9 +1,9 @@
 package com.example.Jpa.Hibernate.Part3.JPA3;
 
-import com.example.Jpa.Hibernate.Part3.JPA3.Services.AuthorService;
-import com.example.Jpa.Hibernate.Part3.JPA3.Services.BidirectionalService;
-import com.example.Jpa.Hibernate.Part3.JPA3.Services.ManyToManyService;
-import com.example.Jpa.Hibernate.Part3.JPA3.Services.UnidirectionalService;
+import com.example.Jpa.Hibernate.Part3.JPA3.services.AuthorService;
+import com.example.Jpa.Hibernate.Part3.JPA3.services.BidirectionalService;
+import com.example.Jpa.Hibernate.Part3.JPA3.services.ManyToManyService;
+import com.example.Jpa.Hibernate.Part3.JPA3.services.UnidirectionalService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -20,7 +20,7 @@ public class Jpa3Application {
         //authorService.createAuthorInstance();
        // bidirectionalService.createBidirectionalInstance();
         //unidirectionalService.setData();
-        manyToManyService.createManyToMany();
+        //manyToManyService.createManyToMany();
     }
 
 }

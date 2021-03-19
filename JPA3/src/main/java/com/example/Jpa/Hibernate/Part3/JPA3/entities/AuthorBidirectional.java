@@ -1,4 +1,4 @@
-package com.example.Jpa.Hibernate.Part3.JPA3.Entities;
+package com.example.Jpa.Hibernate.Part3.JPA3.entities;
 
 import javax.persistence.*;
 import java.util.HashSet;

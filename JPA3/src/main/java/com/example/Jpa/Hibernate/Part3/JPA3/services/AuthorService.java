@@ -1,7 +1,7 @@
-package com.example.Jpa.Hibernate.Part3.JPA3.Services;
+package com.example.Jpa.Hibernate.Part3.JPA3.services;
 
-import com.example.Jpa.Hibernate.Part3.JPA3.Entities.*;
-import com.example.Jpa.Hibernate.Part3.JPA3.Repositories.AuthorRepository;
+import com.example.Jpa.Hibernate.Part3.JPA3.entities.*;
+import com.example.Jpa.Hibernate.Part3.JPA3.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

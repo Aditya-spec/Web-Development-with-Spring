@@ -1,14 +1,12 @@
-package com.example.Jpa.Hibernate.Part3.JPA3.Services;
+package com.example.Jpa.Hibernate.Part3.JPA3.services;
 
-import com.example.Jpa.Hibernate.Part3.JPA3.Entities.AuthorManyToMany;
-import com.example.Jpa.Hibernate.Part3.JPA3.Entities.BookManyToMany;
-import com.example.Jpa.Hibernate.Part3.JPA3.Repositories.ManyToManyRepository;
+import com.example.Jpa.Hibernate.Part3.JPA3.entities.AuthorManyToMany;
+import com.example.Jpa.Hibernate.Part3.JPA3.entities.BookManyToMany;
+import com.example.Jpa.Hibernate.Part3.JPA3.repositories.ManyToManyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Set;
 
 @Service
 public class ManyToManyService {
@@ -19,6 +17,7 @@ public class ManyToManyService {
     public void createManyToMany() {
         AuthorManyToMany author1=new AuthorManyToMany();
         AuthorManyToMany author2=new AuthorManyToMany();
+
         BookManyToMany book1=new BookManyToMany();
         BookManyToMany book2=new BookManyToMany();
         BookManyToMany book3=new BookManyToMany();
@@ -30,11 +29,13 @@ public class ManyToManyService {
         book2.setName("book2");
         book3.setName("book1");
         book4.setName("book4");
+
         author1.setBook(book1);
         author1.setBook(book2);
         author2.setBook(book2);
         author2.setBook(book3);
         author1.setBook(book4);
+
         repository.save(author1);
         repository.save(author2);
     }
