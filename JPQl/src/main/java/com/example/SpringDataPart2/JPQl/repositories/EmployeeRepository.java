@@ -36,6 +36,6 @@ public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 
     @Modifying
     @Query("update Employee  set salary=:updatedSalary where salary<:avgSalary")
-    boolean updateEmployeeHavingLessThanAverageSalary(@Param("updatedSalary") int updatedSalary,
+   void updateEmployeeHavingLessThanAverageSalary(@Param("updatedSalary") int updatedSalary,
                                                    @Param("avgSalary") int averageSalary);
 }

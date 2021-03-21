@@ -70,10 +70,9 @@ public class EmployeeService {
 
     @Transactional
     public void updateLowerSalariedEmployee(int newSalary) {
-        int averageSalary = employeeRepository.findAverageSalary();
+        int avgSalary = employeeRepository.findAverageSalary();
 
-       employeeRepository.updateEmployeeHavingLessThanAverageSalary(newSalary, averageSalary);
-
+        employeeRepository.updateEmployeeHavingLessThanAverageSalary(newSalary, avgSalary);
     }
 
 

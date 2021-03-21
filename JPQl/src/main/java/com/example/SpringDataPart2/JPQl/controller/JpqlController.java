@@ -23,8 +23,9 @@ public class JpqlController {
     }
 
     @GetMapping("/jpql/ques2/{salary}")
-    public void updateSalary(@PathVariable Integer salary) {
+    public String updateSalary(@PathVariable Integer salary) {
          employeeService.updateLowerSalariedEmployee(salary);
+         return "Updated successfully";
     }
 
     @DeleteMapping("/jpql/ques3/{salary}")
