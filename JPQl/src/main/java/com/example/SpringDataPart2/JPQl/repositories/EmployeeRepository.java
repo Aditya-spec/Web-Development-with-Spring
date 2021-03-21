@@ -24,7 +24,7 @@ public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
     @Query("delete Employee e where e.salary<:salary")
     int deleteEmployeeWithMinimumSalary(@Param("salary") int minimumSalary);
 
-    @Query(value = "select emp_id, emp_first_name, emp_age from employee_table where emp_last_name='Singh';", nativeQuery = true)
+    @Query(value = "select emp_id, emp_first_name, emp_age from employee_table where emp_last_name='Singh'", nativeQuery = true)
     List<Object[]> showUsersWithLastNameSingh();
 
     @Modifying
@@ -36,6 +36,6 @@ public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 
     @Modifying
     @Query("update Employee  set salary=:updatedSalary where salary<:avgSalary")
-    void updateEmployeeHavingLessThanAverageSalary(@Param("updatedSalary") int updatedSalary,
+    boolean updateEmployeeHavingLessThanAverageSalary(@Param("updatedSalary") int updatedSalary,
                                                    @Param("avgSalary") int averageSalary);
 }
